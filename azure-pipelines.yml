@@ -22,7 +22,7 @@ steps:
   inputs:
     command: 'push'
     tags: 'latest'
-    containerRegistry: 'your-container-registry-connection'
+    containerRegistry: 'azurePR'
 - task: Docker@2
   displayName: 'Docker Compose Up'
   inputs:
