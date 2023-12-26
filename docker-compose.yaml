@@ -1,0 +1,20 @@
+version: '3'
+services:
+  drupal:
+    build: .
+    image: drupal:9-php7.4-apache
+    ports:
+      - 81:80
+    depends_on:
+      - mysql
+    environment:
+      HOST: mysql
+    volumes:
+      - volumenDocker:/var/www/html
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - volumenmysql:/var/lib/mysql
+volumes:
+  volumenDocker:
+  volumenmysql:
